@@ -1,5 +1,5 @@
 import type { Config } from '@react-router/dev/config';
 
 export default {
-  ssr: true,
+  ssr: false,  // Disabled for AWS Amplify static hosting
 } satisfies Config;

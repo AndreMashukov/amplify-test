@@ -1,0 +1,19 @@
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - yarn install --frozen-lockfile
+        build:
+          commands:
+            - yarn nx build main
+      artifacts:
+        baseDirectory: apps/main/build/client
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+      buildPath: /
+    appRoot: apps/main
